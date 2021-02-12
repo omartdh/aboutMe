@@ -55,21 +55,26 @@
               
                 <div class="form-group">
                   <label for="name">Name</label>
-                  <input type="password" class="form-control" id="name" placeholder="Name">
+                  <input type="name" class="form-control" placeholder="Name" id="name1">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
               
                 <div class="form-group">
                   <label for="Message">Message</label>
                   <textarea type="Message" class="form-control" id="Message" aria-describedby="Message" placeholder="Message"></textarea>
                 </div>
-              <button type="submit" class="btn btn-info">Submit</button>
+              <button type="submit" class="btn btn-info" id="submit-btn">Submit</button>
             </form>
+            <div class="card">
+              <div class="card-body" id="user-info">
+              </div>
+            </div>
             
           </div>
+          
         </div>
           </div>
           <div 
@@ -79,8 +84,28 @@
        
         
     </div>
-    
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+   
+   
+
+    $('#submit-btn').on('click', function(event){
+      event.preventDefault();
+      
+    let name1 = $("#name1").val();
+     let email1 = $('#email-input').val();
+     let msg = $('#Message').val();
+
+      $('#user-info').append($('<h3>').text("Thank you " + name1 + " I got your information"));
+      $('#user-info').append($('<h5>').text('Name: ' + name1));
+      $('#user-info').append($('<h5>').text('Email Address: ' + email1));
+
+    });
+
+
+
+
+    </script>
 </body>
 
 </html>
